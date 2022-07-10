@@ -5,16 +5,20 @@ format = """
 [╭─accounts─➜⇉❯>](bold blue) $username$gcloud$aws$kubernetes
 [┣─network──➜⇉❯>](bold yellow) $localip
 [┣─system───➜⇉❯>](green) $time$status$cmd_duration$hostname$memory_usage$jobs$battery
-[┣─project──➜⇉❯>](bold red) $directory$rust$package$git_branch$git_status$golang$terraform$docker_context
-[╰─cli─➜⇉❯>](bold green)
+[┣─project──➜⇉❯>](bold red) $directory$rust$package$golang$terraform $docker_context
+[┣─git────➜⇉❯>](bold blue)$git_branch$git_status$git_commit
+[┣─metrics➜⇉❯>](bold red)$git_metrics
+[╰─cli─➜⇉❯>](bold green)$character
 """
 
 command_timeout = 500
 
 
 # Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+
 
 [cmd_duration]
 show_milliseconds = true
@@ -53,12 +57,16 @@ us-east-1 = "va"
 format = " package: [🎁 $version](208 bold) "
 
 [docker_context]
-format = "docker: [🐋 $context](blue bold)"
+format = "via [🐋 $context](blue bold)"
 disabled = false
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = true
 
 [directory]
-truncation_length = 7
+truncation_length = 3
 truncation_symbol = "…/"
+home_symbol="~ $HOME"
 
 [username]
 style_user = "blue bold"
@@ -86,9 +94,15 @@ not_found_symbol="🔍"
 format = '[\[$symbol$status\]]($style) '
 disabled = false
 
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "x "
+format = "[\\($hash$tag\\)]($style) "
+style = "bold green"
+
 [git_branch]
-format = "on [$symbol$branch(:$remote_branch)]($style) "
-style = "bold blue"
+format = "on branch [$symbol$branch(:$remote_branch)]($style) "
+style = "bold green"
 symbol = " "
 
 [git_status]
@@ -102,6 +116,12 @@ modified = "📝"
 staged = '[++\($count\)](green)'
 renamed = "👅"
 deleted = "🗑"
+
+[git_metrics]
+added_style = "bold blue"
+disabled = false
+deleted_style = "bold red"
+format = '([ Added: +$added]($added_style))([ Deleted: -$deleted]($deleted_style) )'
 
 [rust]
 format = "rust: [🦀 $version](red bold)"
