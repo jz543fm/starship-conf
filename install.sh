@@ -10,6 +10,8 @@ grep -qxF 'eval "$(starship init bash)"' ~/.bashrc || echo 'eval "$(starship ini
 
 #Find where you downloaded starship.toml from this repository
 find $HOME -print | grep -i starship.toml
-
 #Then move from proper location starship.toml to $HOME/.config/ and reload your terminal with: 
 # $bash or $zsh commands
+
+# mv <path_of_custom_starship_toml> ~/.config/starship.toml
+# bash or zsh 
