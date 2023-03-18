@@ -5,3 +5,14 @@ Install [Starship](https://starship.rs) and then add ```starship.toml``` to ```$
 Example (behind white rectangle is name of actual K8s cluster):
 
 ![Screenshot](image.png)
+
+## Installation:
+
+Installation if you do not want to read Starship documentation:
+
+```bash
+#Check installation steps:
+cat install.sh
+#Then install
+./install.sh
+```
