@@ -1,5 +1,15 @@
 #!/usr/bin/env zsh
 
+# Default config dir for starship ~/.config
+config_dir="$HOME/.config"
+
+if [ ! -d "$config_dir" ]; then
+  mkdir -p "$config_dir"
+  echo "Directory $config_dir created."
+else
+  echo "Directory $config_dir already exists."
+fi
+
 #Add the init script to your shell's config file:
 grep -qxF 'eval "$(starship init zsh)"' ~/.zshrc || echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
