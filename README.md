@@ -11,10 +11,8 @@ Example (behind white rectangle is name of actual K8s cluster):
 Installation if you do not want to read Starship documentation:
 
 ```bash
-curl -sS https://starship.rs/install.sh | sudo sh #Linux
-brew install starship # MacOs
 #Check installation steps:
 #Install
-./install_bash.sh #bash
-./install_zsh.sh #zsh
+sudo ./install_bash.sh #bash - Linux
+sudo ./install_zsh.sh #zsh - MacOS
 ```
