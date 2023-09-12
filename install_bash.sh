@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-#Install Starship - Linux
-curl -sS https://starship.rs/install.sh | sh
-
 #Default config dir for starship ~/.config
 config_dir="$HOME/.config"
 

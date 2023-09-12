@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-#Install Starship - MacOS
-brew install starship
-
 #Default config dir for starship ~/.config
 config_dir="$HOME/.config"
 
