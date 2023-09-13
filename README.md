@@ -15,6 +15,6 @@ Installation if you do not want to read Starship documentation:
 curl -sS https://starship.rs/install.sh | sudo sh #Linux
 brew install starship #MacOS
 
-sudo ./install_bash.sh #bash - Linux
-sudo ./install_zsh.sh #zsh - MacOS
+./install_bash.sh #bash - Linux
+./install_zsh.sh #zsh - MacOS
 ```
