@@ -1,5 +1,5 @@
 # Don't print a new line at the start of the prompt
-# add_newline = false
+ add_newline = true
 
 format = """
 [╭─accounts─➜⇉❯>](bold blue) $username$gcloud$aws$kubernetes
@@ -55,13 +55,6 @@ us-east-1 = "va"
 
 [package]
 format = " package: [🎁 $version](208 bold) "
-
-[docker_context]
-format = "via [🐋 $context](blue bold)"
-disabled = false
-only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-detect_folders = true
 
 [directory]
 truncation_length = 3
