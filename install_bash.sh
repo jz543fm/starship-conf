@@ -14,7 +14,7 @@ fi
 grep -qxF 'eval "$(starship init bash)"' ~/.bashrc || echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 #Find where you downloaded starship.toml from this repository
-STARSHIP_PATH=$(find / -print | grep -i starship.toml);
+STARSHIP_PATH=$(find / -type d -name "starship-conf" -exec find {} -name "starship.toml" \; -quit)
 
 #Then move from proper location starship.toml to $HOME/.config/ and reload your terminal with: 
 # mv <path_of_custom_starship_toml> ~/.config/starship.toml
