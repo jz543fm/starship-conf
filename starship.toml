@@ -60,7 +60,6 @@ format = " package: [🎁 $version](208 bold) "
 format = "via [🐋 $context](blue bold)"
 disabled = false
 only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
 detect_folders = true
 
 [directory]
